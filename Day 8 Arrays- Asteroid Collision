@@ -1,0 +1,31 @@
+Problem Description:
+We are given an array asteroids of integers representing asteroids in a row.
+For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left).
+Each asteroid moves at the same speed. Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. 
+If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
+
+Sample Example:
+Input: asteroids = [5,10,-5]
+Output: [5,10]
+Explanation: The 10 and -5 collide resulting in 10. The 5 and 10 never collide.
+
+
+Code:
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        j = 0
+        n = len(asteroids)
+
+        for i in range(n):
+            asteroid = asteroids[i]
+            while j > 0 and asteroids[j - 1] > 0 and asteroid < 0 and asteroids[j - 1] < abs(asteroid):
+                j -= 1
+
+            if j == 0 or asteroid > 0 or asteroids[j - 1] < 0:
+                asteroids[j] = asteroid
+                j += 1
+            elif asteroids[j - 1] == abs(asteroid):
+                j -= 1
+        return asteroids[:j]
+
+Problem Source: https://leetcode.com/problems/asteroid-collision/description/
