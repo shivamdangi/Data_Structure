@@ -1,0 +1,22 @@
+Problem Description:
+Given an array of strings, return another array containing all of its longest strings.
+
+Example
+
+For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+solution(inputArray) = ["aba", "vcd", "aba"].
+
+
+Code:
+
+def solution(inp):
+    ml = len(max(inp, key=len))
+    tr = []
+    for i in inp:
+        if len(i) == ml:
+            tr.append(i)
+    return tr
+
+
+Problem Source: https://app.codesignal.com/arcade/intro/level-3/fzsCQGYbxaEcTr2bL/solutions
+
