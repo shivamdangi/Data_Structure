@@ -1,0 +1,28 @@
+#Problem Description:
+Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+People can be very tall!
+
+Example
+
+For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
+solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
+
+
+#code:
+
+def solution(a):
+    l=[]
+    for i in a:
+        if i!=-1:
+            l.append(i)
+            
+    l.sort()
+    i=0
+    for j in range(len(a)):
+        if a[j]!=-1:
+            a[j]=l[i]
+            i+=1
+    
+    return a
+
+Problem Source: https://app.codesignal.com/arcade/intro/level-3/D6qmdBL2NYz49XHwM/solutions
