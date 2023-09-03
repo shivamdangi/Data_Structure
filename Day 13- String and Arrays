@@ -1,0 +1,33 @@
+#Problem Description:
+
+Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+
+Example
+
+For picture = ["abc",
+           "ded"]
+the output should be
+
+solution(picture) = ["*****",
+                     "*abc*",
+                     "*ded*",
+                     "*****"]
+
+Code:
+def solution(p):
+    k=len(p[0])+2
+    out=[k*'*']
+    print(out)
+    j=1
+    for i in range(len(p)):
+        p[i]='*'+p[i]+'*'
+        out.append(p[i])
+        j+=1
+    
+    las=k*'*'
+    out.append(las)
+    print(out)
+    return out
+        
+
+Problem Source: https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN/solutions
