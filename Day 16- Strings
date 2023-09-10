@@ -1,0 +1,21 @@
+Problem Description:
+Given a string, your task is to replace each of its characters by the next one in the English alphabet; i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+
+Example
+
+For inputString = "crazy", the output should be solution(inputString) = "dsbaz".
+
+
+Code:
+def solution(string):
+    char_list = list(string)
+    for i in range(len(char_list)):
+        char = char_list[i]
+        if char.isalpha():
+            
+            char_list[i] = chr(ord(char) + 1)
+            if char=='z':
+                char_list[i]='a'
+    return ''.join(char_list)
+
+Problem Source: https://app.codesignal.com/arcade/intro/level-6/PWLT8GBrv9xXy4Dui/solutions
