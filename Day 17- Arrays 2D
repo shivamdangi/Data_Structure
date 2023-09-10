@@ -1,0 +1,24 @@
+Problem Description
+Given two cells on the standard chess board, determine whether they have the same color or not.
+
+Example
+
+For cell1 = "A1" and cell2 = "C3", the output should be
+solution(cell1, cell2) = true.
+
+
+Code:
+def solution(cell1, cell2):
+    col1, row1 = ord(cell1[0]) - ord('A') + 1, int(cell1[1])
+    col2, row2 = ord(cell2[0]) - ord('A') + 1, int(cell2[1])
+    
+    # Determine the parity of the column and row numbers
+    pt1 = (col1 + row1) % 2
+    pt2 = (col2 + row2) % 2
+    if pt1 == pt2:
+        return True
+    else:
+        return False
+
+
+Problem Source: https://app.codesignal.com/arcade/intro/level-6/t97bpjfrMDZH8GJhi/solutions
